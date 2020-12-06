@@ -3,6 +3,8 @@
 import os 
 import getopt, sys
 
+from base import Base
+
 
 class Main():
     def __init__(self):
@@ -13,11 +15,15 @@ class Main():
         self.cwd = os.getcwd()
     
     def parse_arguments(self):
-        print(self.cwd)
+        base_obj = Base(self.cwd)
+        files, dirs = base_obj.get_output()
+        
+        print(files)
+        print(dirs)
 
-        for arg, value in self.arguments:
-            print(arg)
-            print(value)
+        # for arg, value in self.arguments:
+        #     print(arg)
+        #     print(value)
 
 
 if __name__ == "__main__":
