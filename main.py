@@ -4,6 +4,7 @@ import os
 import getopt, sys
 
 from base import Base
+from print_output import Print
 
 
 class Main():
@@ -18,8 +19,8 @@ class Main():
         base_obj = Base(self.cwd)
         files, dirs = base_obj.get_output()
         
-        print(files)
-        print(dirs)
+        print_obj = Print(files, dirs)
+        print_obj.print_output()
 
         # for arg, value in self.arguments:
         #     print(arg)
